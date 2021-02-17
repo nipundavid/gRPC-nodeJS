@@ -12,11 +12,6 @@ let packageDefinition = protoLoader.loadSync(PROTO_PATH, {
 });
 let employee_proto = grpc.loadPackageDefinition(packageDefinition).employee;
 
-let client = new employee_proto.Employee(
-  "localhost:4500",
-  grpc.credentials.createInsecure()
-);
-
 function main() {
   let client = new employee_proto.Employee(
     "localhost:4500",
